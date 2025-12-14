@@ -1,0 +1,20 @@
+# node
+node_modules/
+**/node_modules/
+
+# Frontend
+/packages/frontend/node_modules/
+
+# Solidity / Foundry
+/contracts/lib/
+contracts/out/
+contracts/cache/
+contracts/cache/*
+forge-debug.log
+
+# General
+dist/
+.env
+*.log
+.DS_Store
+.vscode/
