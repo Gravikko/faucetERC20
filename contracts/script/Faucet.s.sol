@@ -6,11 +6,10 @@ import {FaucetToken} from "../src/Faucet.sol";
 
 contract DeployFaucet is Script {
     function run() public returns (address faucetTokenAddress) {
-        uint256 deployerPrivateKey = vm.envUnit("PRIVATE_KEY");
-
-        address initialOwner = vm.addr(deployerPrivateKey);
 
         vm.startBroadcast();
+
+        address initialOwner = msg.sender;
 
         console.log("Deploying FaucetToken");
         console.log("Owner will be set to : ", initialOwner);
@@ -20,6 +19,6 @@ contract DeployFaucet is Script {
         vm.stopBroadcast();
 
         faucetTokenAddress = address(faucetToken);
-        console.log("✅ FaucetToken deployed to:", faucetTokenAddress);
+        console.log("FaucetToken deployed to:", faucetTokenAddress);
     }
 }
